@@ -3,8 +3,14 @@ module.exports = {
         browser: true,
         es2021: true,
         node: true,
+        'vue/setup-compiler-macros': true, // 解决 defineProp 等未定义校验问题
     },
-    extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+    extends: [
+        'eslint:recommended',
+        'plugin:vue/vue3-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:prettier/recommended',
+    ],
     parser: 'vue-eslint-parser',
     parserOptions: {
         ecmaVersion: 'latest',
