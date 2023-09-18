@@ -74,7 +74,7 @@ const formItemArr: SearchItemVO[] = [
 </script>
 
 <template>
-    <section class="h-full">
+    <section class="h-full bg-gray p-12">
         {{ filter }}
         <search-container
             v-model:filter="filter"

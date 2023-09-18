@@ -53,7 +53,7 @@ const getComponent: (type: string) => DefineComponent = (type: string) => {
 </script>
 
 <template>
-    <section class="bg-white p-12 br-4 overflow-hidden">
+    <section class="bg-white container br-4 overflow-hidden">
         <el-form :model="filter">
             <el-row class="search-wrap" :gutter="props.gutter">
                 <el-col v-for="item in useFormItemArr" :key="item.prop" :span="item.elColSpan || elColSpan">
@@ -65,7 +65,7 @@ const getComponent: (type: string) => DefineComponent = (type: string) => {
                     <div class="flex justify-content-end align-items-center">
                         <div
                             v-if="isSeniorSearch"
-                            class="cursor-pointer fw-medium m-bottom-12 senior-search"
+                            class="cursor-pointer m-bottom-12 senior-search"
                             @click="isShow = !isShow"
                         >
                             <span>{{ isShow ? '关闭筛选' : '展开筛选' }}</span>
@@ -86,13 +86,16 @@ const getComponent: (type: string) => DefineComponent = (type: string) => {
 </template>
 
 <style lang="less" scoped>
-.search-wrap {
-    display: flex;
-    flex-wrap: wrap;
-}
-.senior-search {
-    line-height: 32px;
-    display: flex;
-    justify-content: center;
+.container {
+    padding: 12px 12px 0 12px;
+    .search-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .senior-search {
+        line-height: 32px;
+        display: flex;
+        justify-content: center;
+    }
 }
 </style>
