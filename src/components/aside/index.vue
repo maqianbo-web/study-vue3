@@ -4,20 +4,18 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref, watchPostEffect } from 'vue';
 import { routes } from '../../router/index';
 
 import MenuList from './MenuList.vue';
+import { useRoute } from 'vue-router';
 
 const isCollapse = ref(false);
-const defaultActive = ref('/home');
+const defaultActive = ref('/');
+const route = useRoute();
 
-const getDefaultActive = () => {
-    const path = window.location.pathname;
-    defaultActive.value = path;
-};
-onMounted(() => {
-    getDefaultActive();
+watchPostEffect(() => {
+    defaultActive.value = route.path;
 });
 </script>
 

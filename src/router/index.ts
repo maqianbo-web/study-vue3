@@ -21,13 +21,13 @@ export const routes: Array<RouteRecordRaw> = [
         component: HomeView,
     },
     {
-        path: '/about',
-        name: 'about',
+        path: '/form',
+        name: 'form',
         meta: {
-            name: 'about',
+            name: '表单展示',
             isShow: true,
         },
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+        component: () => import(/* webpackChunkName: "showform" */ '../views/form/index.vue'),
     },
 ];
 
