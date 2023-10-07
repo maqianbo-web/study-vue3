@@ -27,7 +27,16 @@ export const routes: Array<RouteRecordRaw> = [
             name: '表单展示',
             isShow: true,
         },
-        component: () => import(/* webpackChunkName: "showform" */ '../views/form/index.vue'),
+        component: () => import('../views/form/index.vue'),
+    },
+    {
+        path: '/echart',
+        name: 'echart',
+        meta: {
+            name: 'echart展示',
+            isShow: true,
+        },
+        component: () => import('../views/echart/index.vue'),
     },
 ];
 

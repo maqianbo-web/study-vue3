@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { DefineComponent, computed, ref } from 'vue';
-import { SearchItemVO } from '../constants/enum';
+import { SearchItemVO, SearchType } from '../constants/enum';
 import CustomInput from './CustomInput.vue';
 import CustomSelect from './CustomSelect.vue';
 import CustomRadio from './CustomRadio.vue';
@@ -47,7 +47,9 @@ const componentsMap = new Map([
     ['select', CustomSelect],
     ['radio', CustomRadio],
 ]);
-const getComponent: (type: string) => DefineComponent = (type: string) => {
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getComponent: (type: SearchType) => DefineComponent = (type: SearchType) => {
     return componentsMap.get(type);
 };
 </script>

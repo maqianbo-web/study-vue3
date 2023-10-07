@@ -51,11 +51,13 @@ const formItemArr: SearchItemVO[] = [
         label: '产品类型',
         prop: 'productType',
         type: 'select',
-        options: [
-            { label: 'A', value: 'a' },
-            { label: 'B', value: 'b', disabled: true },
-            { label: 'C', value: 'c' },
-        ],
+        options: () => {
+            return [
+                { label: 'A', value: 'a' },
+                { label: 'B', value: 'b', disabled: true },
+                { label: 'C', value: 'c' },
+            ];
+        },
         onChange: (changeParams) => changeValue(changeParams),
     },
     {

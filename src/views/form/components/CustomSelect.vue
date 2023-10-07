@@ -26,12 +26,23 @@ const changeValue = (val: unknown) => {
         });
     }
 };
+const options = computed(() => {
+    if (prop.item.options) {
+        if (Array.isArray(prop.item.options)) {
+            return prop.item.options;
+        } else {
+            return prop.item.options();
+        }
+    } else {
+        return [];
+    }
+});
 </script>
 
 <template>
     <el-select v-model="value" v-bind="config" @change="(val) => changeValue(val)">
         <el-option
-            v-for="v in prop.item.options"
+            v-for="v in options"
             :key="v.value"
             :label="v.label"
             :value="v.value"

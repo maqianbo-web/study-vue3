@@ -18,6 +18,17 @@ const config = reactive({
     placeholder: `请输入${prop.item.label}`,
     ...(prop.item.config || {}),
 });
+const options = computed(() => {
+    if (prop.item.options) {
+        if (Array.isArray(prop.item.options)) {
+            return prop.item.options;
+        } else {
+            return prop.item.options();
+        }
+    } else {
+        return [];
+    }
+});
 const changeValue = (val: unknown) => {
     if (prop.item.onChange) {
         prop.item.onChange({
@@ -30,7 +41,7 @@ const changeValue = (val: unknown) => {
 
 <template>
     <el-radio-group v-model="value" v-bind="config" @change="(val) => changeValue(val)">
-        <el-radio v-for="v in prop.item.options" :key="v.value" :label="v.value">{{ v.label }}</el-radio>
+        <el-radio v-for="v in options" :key="v.value" :label="v.value">{{ v.label }}</el-radio>
     </el-radio-group>
 </template>
 

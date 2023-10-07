@@ -13,7 +13,7 @@ export interface SearchItemVO {
     prop: string;
     type: SearchType;
     elColSpan?: number; // 展示列的长度，默认一行 24
-    options?: SearchItemOptionsVO[]; // select的选项
+    options?: SearchItemOptionsVO[] | (() => SearchItemOptionsVO[]); // select的选项
     onChange?: (changeParams: ChangeParamsVO) => void; // 搜索框更改事件
     config?: Record<string, unknown>;
 }
