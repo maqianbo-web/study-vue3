@@ -38,6 +38,15 @@ export const routes: Array<RouteRecordRaw> = [
         },
         component: () => import('../views/echart/index.vue'),
     },
+    {
+        path: '/x6',
+        name: 'x6',
+        meta: {
+            name: '血缘关系',
+            isShow: true,
+        },
+        component: () => import('../views/x6/index.vue'),
+    },
 ];
 
 const router = createRouter({
