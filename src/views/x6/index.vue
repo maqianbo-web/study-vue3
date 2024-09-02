@@ -161,10 +161,6 @@ const changeNodeStatus = (obj: AddOrRemoveParams, type: 'hide' | 'show') => {
 
 <template>
     <section class="wrap">
-        <div class="operate">
-            <el-button class="m-left-10 m-bottom-12" @click="addNode">添加</el-button>
-            <el-button type="primary" class="m-bottom-12">删除</el-button>
-        </div>
         <div ref="containerRef" class="chart-container overflow-hidden"></div>
         <div ref="miniMapContainerRef" class="minimap-container"></div>
     </section>
